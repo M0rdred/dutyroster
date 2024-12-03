@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: 4
+      author: M0rdred
+      changes:
+        - createTable:
+            tableName: employee_workstation_assignment
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: employee_id
+                  type: BIGINT
+              - column:
+                  name: workstation_id
+                  type: BIGINT
