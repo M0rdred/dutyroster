@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  db:
+    image: postgres:16
+    restart: always
+    environment:
+      POSTGRES_DB: dutyroster
+      POSTGRES_USER: dutyrosterapp
+      POSTGRES_PASSWORD: dutyrosterapp1234
+    ports:
+      - "5432:5432"
