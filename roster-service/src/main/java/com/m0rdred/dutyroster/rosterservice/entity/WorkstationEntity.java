@@ -12,7 +12,7 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "work_station")
+@Table(name = "workstation")
 public class WorkstationEntity {
 
     @Id
@@ -27,7 +27,7 @@ public class WorkstationEntity {
     private String type;
 
     @OneToMany(mappedBy = "workstation", cascade = CascadeType.ALL)
-    private Set<EmployeeWorkstationAssignmentEntity> assignments;
+    private Set<ShiftAssignmentEntity> assignments;
 
     public Long getId() {
         return id;

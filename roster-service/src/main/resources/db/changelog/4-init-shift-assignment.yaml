@@ -4,7 +4,7 @@ databaseChangeLog:
       author: M0rdred
       changes:
         - createTable:
-            tableName: employee_workstation_assignment
+            tableName: shift_assignment
             columns:
               - column:
                   name: id
@@ -17,4 +17,7 @@ databaseChangeLog:
                   type: BIGINT
               - column:
                   name: workstation_id
+                  type: BIGINT
+              - column:
+                  name: workshift_id
                   type: BIGINT

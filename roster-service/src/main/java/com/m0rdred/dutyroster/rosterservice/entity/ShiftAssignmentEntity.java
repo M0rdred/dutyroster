@@ -10,8 +10,8 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "employee_workstation_assignment")
-public class EmployeeWorkstationAssignmentEntity {
+@Table(name = "shift_assignment")
+public class ShiftAssignmentEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,6 +27,11 @@ public class EmployeeWorkstationAssignmentEntity {
     @ManyToOne
     @JoinColumn(name = "workstation_id")
     private WorkstationEntity workstation;
+
+    // Relationship with WorkShift
+    @ManyToOne
+    @JoinColumn(name = "workshift_id")
+    private WorkShiftEntity workShift;
 
     public Long getId() {
         return id;
@@ -50,6 +55,14 @@ public class EmployeeWorkstationAssignmentEntity {
 
     public void setWorkstation(WorkstationEntity workstation) {
         this.workstation = workstation;
+    }
+
+    public WorkShiftEntity getWorkShift() {
+        return workShift;
+    }
+
+    public void setWorkShift(WorkShiftEntity workShift) {
+        this.workShift = workShift;
     }
 
 }

@@ -4,9 +4,10 @@ import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.Set;
 
 @Entity
-@Table(name = "employee")
+@Table(name = "workshift")
 public class WorkShiftEntity {
 
     @Id
@@ -22,5 +23,8 @@ public class WorkShiftEntity {
 
     @Column(name = "end_time")
     private LocalTime endTime;
+
+    @OneToMany(mappedBy = "workShift", cascade = CascadeType.ALL)
+    private Set<ShiftAssignmentEntity> assignments;
 
 }
